@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="menu-items flex row">
+
+            <div class="title-container">
+                <img src="https://img.icons8.com/color/96/000000/google-scholar--v1.png"/>
+                <h1>ACME Co.</h1>
+            </div>
+
+            <div class="buttons-container">
+                <button mat-button [matMenuTriggerFor]="notifications">
+                    <mat-icon matBadge="8" matBadgePosition="after" matBadgeColor="accent">notifications_none</mat-icon>
+                </button>
+                <mat-menu #notifications="matMenu">
+                    <button mat-menu-item>
+                        New defect 'broken sign in' logged by John Doe
+                    </button>
+                    <button mat-menu-item>
+                        Alexa Ramirez finished QA on DE245511
+                    </button>
+                    <button mat-menu-item>
+                        Reminder: Change your password in 16 days
+                    </button>
+                    <button mat-menu-item>
+                        Lorem ipsum solurs da raemus
+                    </button>
+                </mat-menu>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon fontSet="material-icons-outlined">account_circle</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <div class="user-info">
+                        John Smith
+                        <p>john.smith@gmail.com</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item>
+                        <mat-icon fontSet="material-icons-outlined">settings</mat-icon>
+                        Settings
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon fontSet="material-icons-outlined">account_circle</mat-icon>
+                        Profile
+                    </button>
+                    <button mat-menu-item class="logout-btn">
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+            </div>
+
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

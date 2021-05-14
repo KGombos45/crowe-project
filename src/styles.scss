@@ -1,0 +1,135 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import '~ngx-toastr/toastr';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$crowe-project-primary: mat-palette($mat-indigo);
+$crowe-project-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$crowe-project-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$crowe-project-theme: mat-light-theme((
+  color: (
+    primary: $crowe-project-primary,
+    accent: $crowe-project-accent,
+    warn: $crowe-project-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($crowe-project-theme);
+
+$crowe-project-primary: #014D40;
+$crowe-project-primary-blue: #102A43;
+$crowe-project-white: #EFFCF6;
+$crowe-project-background-blue: #F0F4F8;
+$crowe-project-background-blue-darker: #D9E2EC;
+$crowe-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.2);
+
+$crowe-link-green: #147D64;
+$crowe-link-green-hover: #27AB83;
+
+$crowe-table-header-blue: #627D98;
+$crowe-table-border-blue: #BCCCDC;
+
+$crowe-sidenav-link-hover-blue: #9FB3C8;
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: $crowe-project-background-blue !important;}
+.flex { align-items: center; display: flex; flex-direction: column; justify-content: center; }
+.row { flex-direction: row;}
+
+.mat-button {
+  background: transparent;
+  height: 50px;
+}
+
+.mat-icon {
+  margin-right: 5px;
+}
+
+.card {
+  -webkit-box-shadow: $crowe-box-shadow; 
+  box-shadow: $crowe-box-shadow;
+  border-radius: 4px;
+}
+
+.text-label {
+  color: $crowe-table-header-blue;
+}
+
+.text-input {
+  background: $crowe-project-background-blue;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  display: block;
+  height: 35px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: $crowe-link-green;
+  font-weight: bold;
+
+  &:hover {
+      text-decoration: underline;
+      color: $crowe-link-green-hover;
+  }
+}
+
+.ngx-custom-toastr {
+  background-color: $crowe-project-background-blue-darker;
+  color: $crowe-project-primary-blue;
+  border-left: 4px solid $crowe-project-primary-blue;
+  width: 350px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.3); 
+  box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.3);
+  background-position: 15px;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  margin-bottom: 15px;
+  pointer-events: auto;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    -webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.6); 
+    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.6);
+  }
+
+ .toast-title, .toast-message {
+   margin-left: 40px;
+ }
+
+ .toast-close-button {
+   color: $crowe-project-primary-blue;
+ }
+
+ &.toast-warning {
+  background-image: url('../src/assets/warning.svg') !important;
+}
+}

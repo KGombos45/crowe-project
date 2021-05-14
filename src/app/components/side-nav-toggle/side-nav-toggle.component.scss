@@ -1,0 +1,21 @@
+.settings-container {
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+    
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+        width: 245px;
+        z-index: 25;
+        margin-top: -50px;
+    }
+
+    .mat-button {
+        .condensed {
+            margin-right: -18px;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../../styles.scss';
+
+.card {
+    height: 155px;
+    width: auto;
+    flex-basis: 100%;
+    margin: 0px 20px 20px 0px;
+
+    iframe {
+        border-radius: 4px;
+    }
+}
+
+.gradient-bkg {
+    background: rgb(1,77,64);
+    background: linear-gradient(160deg, rgba(1,77,64,1) 0%, rgba(25,148,115,1) 100%);
+    padding: 0px 40px 0px 40px;
+}
+
+.items-container {
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    .item-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    h1.item-info {
+        font-size: 42px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    .item {
+        color: $crowe-project-white;
+    }
+}
